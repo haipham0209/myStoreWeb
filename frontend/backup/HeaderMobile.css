@@ -1,0 +1,111 @@
+/* .menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+}
+
+.menu-icon .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Khi menu mở, thêm class active vào .menu-icon */
+.menu-icon.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 5px);
+    transition: all 0.7s ease;
+}
+
+.menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+    transition: all 0.7s ease;
+}
+
+.menu-icon.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -5px);
+  transition: all 0.7s ease;
+}
+
+
+
+.custom-toggler {
+  border: none !important;    /* Xóa border */
+  outline: none !important;   /* Xóa viền focus */
+  box-shadow: none !important; /* Xóa bóng nếu có */
+  background: transparent !important; /* Đảm bảo nền trong suốt */
+}
+.custom-toggler {
+  width: 50px;    /* tăng chiều rộng nút */
+  height: 50px;   /* tăng chiều cao nút */
+  padding: 0px;   /* canh padding hợp lý */
+}
+
+.menu-icon {
+  width: 40px;    /* tăng chiều ngang của 3 thanh */
+  height: 35px;   /* tăng chiều cao của 3 thanh */
+  justify-content: space-around; /* khoảng cách đều hơn */
+}
+
+.menu-icon .bar {
+  height: 4.5px;    /* thanh dày hơn */
+  border-radius: 3px;
+}
+.menu-icon .bar {
+  transform-origin: center;
+}
+
+.offcanvas {
+  transition-duration: 0.7s ;  /* Thời gian mở/đóng menu, tăng hoặc giảm */
+  width: 75% !important; /* chỉnh rộng hơn hoặc nhỏ hơn */
+  max-width: 100vw; /* giới hạn chiều rộng tối đa theo % viewport */
+    will-change: transform;
+}
+
+.offcanvas-body {
+color: black;
+}
+
+.navbar-nav .nav-link {
+  color: black !important;
+  /* font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold; */
+  padding: 0 1rem;
+  margin-right: 30px;
+}
+
+
+
+/* Cố định navbar trên cùng */
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  padding-top: 30px;
+  width: 100%;
+  z-index: 9999;
+  transition: top 0.3s ease-in-out;
+}
+#haicontainer{
+  background-color: #215259;
+}
+
+/* Ghi đè màu nền header */
+.navbar {
+  background-color: #c8cccd !important; /* Màu bạn muốn */
+}
+.nav-link{
+  margin-top: 25px;
+  font-size: 20px;
+}
+.custom-support{
+  border-bottom: 1px solid black;
+}
+.custom-support-inline{
+  font-size: 18px;
+  margin-top: 8px !important;
+}

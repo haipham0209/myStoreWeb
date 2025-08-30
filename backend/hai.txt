@@ -1,0 +1,28 @@
+cd D:\taphoathuavan/taphoa
+mysql -u root -p --default-character-set=utf8mb4 taphoathuavan < "C:\Users\2230110\Desktop\taphoathuavan\backend\src\main\resources\import.sql"    
+
+login
+{
+ "email" : "admin@example.com",
+  "password" : "123"
+}
+
+taph0Aw1ThKiwithmailKeyOnCanhVinhInBinhDinhwitha
+
+update users set status = "active" where email="admin@example.comhai2";
+  
+ logout
+   "refreshToken" : "ngan@example.com"
+   
+   refresh access token
+bearer 
+  "refresh_token" : "123"
+  
+  register
+  {
+  "userName": "Nguyen Van A",
+  "email": "a@example.com",
+  "password": "123456"
+}
+
+  

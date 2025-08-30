@@ -1,0 +1,164 @@
+.custom-home-menu {
+
+  width: 15%;
+  position: fixed;
+  min-height: 100vh;
+  margin-top: -70px;
+  background-color: rgba(18, 18, 18, 0.962) !important;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px !important;
+  justify-content: space-between;
+  box-shadow: 6px 0 10px 0px rgba(0, 0, 0, 0.5) !important;
+}
+
+.custom-link{
+  color: rgb(168, 168, 168);
+}
+.custom-bottom-nav-menu {
+  color: rgb(197, 197, 197);
+  font-size: 17px;
+}
+
+.custom-bottom-nav-menu:hover {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 19px;
+  color: aliceblue;
+  padding: 0 !important;
+}
+
+ul {
+  list-style-type: none;
+  /* padding-left: 0; nếu muốn canh lề sát */
+  margin: 0;
+  padding-inline-start: 15px;
+  padding-left: 10px;
+}
+
+/* li {
+  color: aliceblue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  white-space: nowrap;
+} */
+.custom-sub-li,
+.menu-li {
+  color: aliceblue;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+.flex-grow {
+  min-height: 100%;
+}
+
+.custom-collapse-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* đẩy nút chevron ra cuối */
+  width: 100%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: aliceblue;
+  font-size: 19px;
+  background-color: transparent;
+}
+
+.custom-collapse-button2 {
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: space-around; */
+  color: aliceblue;
+  font-size: 19px;
+  background-color: none;
+  /* margin-left: -2rem; */
+}
+
+.custom-label {
+  margin-left: 10px;
+}
+
+.sub-list-none {
+  background-color: rgb(71, 71, 71);
+  margin-left: 15px;
+}
+
+.custom-sub-ul {
+  padding-left: 2px;
+}
+
+.custom-sub-li {
+  border-bottom: 1.6px solid black;
+}
+
+.menu-label {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-label {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-collapse-button.active {
+  background-color: white;
+  color: black;
+  padding-left: 5px;
+}
+
+.custom-collapse-button.active svg {
+  color: black;
+}
+
+/* Hover cho collapse-button riêng */
+.custom-collapse-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  /* 👈 CHÍNH NÓ */
+}
+
+.custom-collapse-button:hover {
+  background-color: rgb(175, 175, 175);
+  color: black;
+}
+
+.custom-collapse-button2:hover {
+  background-color: rgb(175, 175, 175);
+  color: black;
+}
+
+.custom-collapse-button:hover svg {
+  color: black;
+}
+
+/* Hover cho li con */
+.custom-sub-li {
+  color: aliceblue;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  /* 👈 CHÍNH NÓ */
+}
+
+.custom-sub-li:hover {
+  background-color: rgb(175, 175, 175);
+  color: black;
+}
+
+.custom-sub-li:hover a {
+  color: black;
+}
+
+.active {
+  background-color: white;
+  color: black;
+}
+
+.active a {
+  color: black;
+}

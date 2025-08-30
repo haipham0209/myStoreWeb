@@ -1,0 +1,19 @@
+.navbar-custom {
+    min-height: 100px;
+    /* chiều cao tối thiểu */
+    /* background-color: #dbddbb; */
+    /* background-color: rgb(213, 91, 28); */
+    background-color: rgb(196, 125, 89);
+
+}
+.custome-hambuger{
+    /* background-color: aquamarine; */
+    border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none; /* tắt viền shadow */
+  outline: none;    /* tắt outline */
+}
+.custom-top-left{
+    border-bottom: solid 1px black;
+}
