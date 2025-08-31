@@ -7,7 +7,7 @@ services:
     depends_on:
       - mysql
     env_file:
-      - .env.dev
+      - .env.prod
       
   mysql:
     image: mysql:8
