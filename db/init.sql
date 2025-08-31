@@ -53,6 +53,10 @@ CREATE TABLE category (
 	    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	    FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE CASCADE
 	);
+
+    ALTER TABLE category MODIFY category_id BIGINT NOT NULL AUTO_INCREMENT;
+    ALTER TABLE product MODIFY category_id BIGINT NOT NULL;
+
 	
 	-- Giảm giá
 	CREATE TABLE discounts (
