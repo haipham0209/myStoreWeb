@@ -1,11 +1,20 @@
 // src/services/productService.js
 import axios from './axiosInstance';
-// import axios from 'axios';
+import axiosWithNoAuth from 'axios';
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const getCategoryList = async () => {
   try {
     const response = await axios.get(`${API_URL}/api/admin/products/categories`);
+    return response.data;
+  } catch (error) {
+    // console.error(error);
+    throw error;
+  }
+};
+export const getCategoryListWithNoAuth = async () => {
+  try {
+    const response = await axiosWithNoAuth.get(`${API_URL}/api/products`);
     return response.data;
   } catch (error) {
     // console.error(error);

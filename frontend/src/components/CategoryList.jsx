@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCategoryList } from "../services/categoryService";
+import { getCategoryListWithNoAuth } from "../services/categoryService";
 import { Link } from "react-router-dom";
 
 const CategoryCarousel = () => {
@@ -11,7 +11,7 @@ const CategoryCarousel = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const data = await getCategoryList();
+        const data = await getCategoryListWithNoAuth();
         setCategories(data || []);
       } catch (err) {
         console.error("Cannot get categories", err);

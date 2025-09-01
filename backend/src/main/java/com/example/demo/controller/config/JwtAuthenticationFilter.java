@@ -26,111 +26,111 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	@Autowired
 	private JwtUtil jwtUtil;
 
-//	@Override
-//	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-//	        throws ServletException, IOException {
-//
-//	    String path = request.getServletPath();
-//
-//	    // Skip cho các endpoint public
-//	    if (path.startsWith("/api/login")
-//	            || path.startsWith("/api/register")
-//	            || path.startsWith("/api/refresh-access-token")
-//	            || path.startsWith("/api/logout")
-//	            || path.startsWith("/public")
-//	            || path.startsWith("/uploads")
-//	            || path.startsWith("/docs")
-//	            || "OPTIONS".equalsIgnoreCase(request.getMethod())) {
-//	        filterChain.doFilter(request, response);
-//	        return;
-//	    }
-//
-//	    final String authHeader = request.getHeader("Authorization");
-//
-//	    if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-//	        filterChain.doFilter(request, response);
-//	        return;
-//	    }
-//
-//	    final String token = authHeader.substring(7);
-//
-//	    try {
-//	        String email = jwtUtil.extractEmail(token);
-//
-//	        if (email != null && jwtUtil.validateToken(token, email)) {
-//	            String role = jwtUtil.extractClaims(token).get("role", String.class);
-//
-//	            UsernamePasswordAuthenticationToken authentication =
-//	                    new UsernamePasswordAuthenticationToken(
-//	                            email,
-//	                            null,
-//	                            List.of(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()))
-//	                    );
-//
-//	            SecurityContextHolder.getContext().setAuthentication(authentication);
-//	        } else {
-//	            sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired or invalid");
-//	            return;
-//	        }
-//	    } catch (ExpiredJwtException e) {
-//	        sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired");
-//	        return;
-//	    } catch (Exception e) {
-//	        sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Invalid token");
-//	        return;
-//	    }
-//
-//	    filterChain.doFilter(request, response);
-//	}
-
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-			throws ServletException, IOException {
+	        throws ServletException, IOException {
 
-		String path = request.getServletPath();
+	    String path = request.getServletPath();
 
-		// Skip cho các endpoint public
-		if (path.startsWith("/api/login") || path.startsWith("/api/register")
-				|| path.startsWith("/api/refresh-access-token") || path.startsWith("/api/logout")
-				|| path.startsWith("/public") || path.startsWith("/uploads") || path.startsWith("/docs")
-				|| "OPTIONS".equalsIgnoreCase(request.getMethod())) {
-			filterChain.doFilter(request, response);
-			return;
-		}
+	    // Skip cho các endpoint public
+	    if (path.startsWith("/api/login")
+	            || path.startsWith("/api/register")
+	            || path.startsWith("/api/refresh-access-token")
+	            || path.startsWith("/api/logout")
+	            || path.startsWith("/public")
+	            || path.startsWith("/uploads")
+	            || path.startsWith("/docs")
+	            || "OPTIONS".equalsIgnoreCase(request.getMethod())) {
+	        filterChain.doFilter(request, response);
+	        return;
+	    }
 
-		final String authHeader = request.getHeader("Authorization");
+	    final String authHeader = request.getHeader("Authorization");
 
-		if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-			filterChain.doFilter(request, response);
-			return;
-		}
+	    if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+	        filterChain.doFilter(request, response);
+	        return;
+	    }
 
-		final String token = authHeader.substring(7);
+	    final String token = authHeader.substring(7);
 
-		try {
-			String email = jwtUtil.extractEmail(token);
+	    try {
+	        String email = jwtUtil.extractEmail(token);
 
-			if (email != null && jwtUtil.validateToken(token, email)) {
-				String role = jwtUtil.extractClaims(token).get("role", String.class);
+	        if (email != null && jwtUtil.validateToken(token, email)) {
+	            String role = jwtUtil.extractClaims(token).get("role", String.class);
 
-				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email,
-						null, List.of(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase())));
+	            UsernamePasswordAuthenticationToken authentication =
+	                    new UsernamePasswordAuthenticationToken(
+	                            email,
+	                            null,
+	                            List.of(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()))
+	                    );
 
-				SecurityContextHolder.getContext().setAuthentication(authentication);
-			} else {
-				sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired or invalid");
-				return;
-			}
-		} catch (ExpiredJwtException e) {
-			sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired");
-			return;
-		} catch (Exception e) {
-			sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Invalid token");
-			return;
-		}
+	            SecurityContextHolder.getContext().setAuthentication(authentication);
+	        } else {
+	            sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired or invalid");
+	            return;
+	        }
+	    } catch (ExpiredJwtException e) {
+	        sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired");
+	        return;
+	    } catch (Exception e) {
+	        sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Invalid token");
+	        return;
+	    }
 
-		filterChain.doFilter(request, response);
+	    filterChain.doFilter(request, response);
 	}
+//
+//	@Override
+//	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+//			throws ServletException, IOException {
+//
+//		String path = request.getServletPath();
+//
+//		// Skip cho các endpoint public
+//		if (path.startsWith("/api/login") || path.startsWith("/api/register")
+//				|| path.startsWith("/api/refresh-access-token") || path.startsWith("/api/logout")
+//				|| path.startsWith("/public") || path.startsWith("/uploads") || path.startsWith("/docs")
+//				|| "OPTIONS".equalsIgnoreCase(request.getMethod())) {
+//			filterChain.doFilter(request, response);
+//			return;
+//		}
+//
+//		final String authHeader = request.getHeader("Authorization");
+//
+//		if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+//			filterChain.doFilter(request, response);
+//			return;
+//		}
+//
+//		final String token = authHeader.substring(7);
+//
+//		try {
+//			String email = jwtUtil.extractEmail(token);
+//
+//			if (email != null && jwtUtil.validateToken(token, email)) {
+//				String role = jwtUtil.extractClaims(token).get("role", String.class);
+//
+//				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email,
+//						null, List.of(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase())));
+//
+//				SecurityContextHolder.getContext().setAuthentication(authentication);
+//			} else {
+//				sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired or invalid");
+//				return;
+//			}
+//		} catch (ExpiredJwtException e) {
+//			sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Token expired");
+//			return;
+//		} catch (Exception e) {
+//			sendErrorResponse(response, HttpServletResponse.SC_UNAUTHORIZED, "Invalid token");
+//			return;
+//		}
+//
+//		filterChain.doFilter(request, response);
+//	}
 
 	private void sendErrorResponse(HttpServletResponse response, int status, String message) throws IOException {
 		response.setStatus(status);
